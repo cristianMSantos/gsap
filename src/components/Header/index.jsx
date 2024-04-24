@@ -14,6 +14,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { useDispatch } from 'react-redux';
+import { setCurrentSectionIndex } from '../../store/features/SectionSlice';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -21,9 +23,22 @@ const navItems = ['Home', 'About', 'Contact'];
 function Header(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const dispatch = useDispatch();
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
+    };
+
+    const smoothScrollTo = (selector) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
+    const handleNavItemClick = (item) => {
+        dispatch(setCurrentSectionIndex(1))
+        // smoothScrollTo(`#${item.toLowerCase()}`);
     };
 
     const drawer = (
@@ -35,7 +50,8 @@ function Header(props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton
+                            sx={{ textAlign: 'center' }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
@@ -74,7 +90,7 @@ function Header(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
+                            <Button id={`${item}Button`} key={item} sx={{ color: '#fff' }} onClick={() => handleNavItemClick(item)}>
                                 {item}
                             </Button>
                         ))}
