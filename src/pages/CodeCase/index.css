@@ -33,9 +33,24 @@
     align-items: center;
 }
 
-.title {
-    font-size: 40px;
+.home-message {
+    font-size: 15px;
     text-transform: uppercase;
+}
+
+.home-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0%;
+}
+
+.scroll {
+    position: fixed;
+    right: 50%;
+    bottom: 10%;
 }
 
 /* Estilo do cursor de digitação */
@@ -45,7 +60,7 @@
     }
 }
 
-.title::after {
+.home-message::after {
     content: '|';
     animation: blink 1s step-end infinite;
 }
@@ -68,6 +83,14 @@ section .inner {
     will-change: transform;
 }
 
+section .inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* height: 100vh; */
+    flex-direction: column;
+}
+
 section .bg {
     display: flex;
     align-items: center;
@@ -78,6 +101,7 @@ section .bg {
     top: 0;
     background-size: cover;
     background-position: center;
+
 }
 
 section .bg h2 {
@@ -86,6 +110,33 @@ section .bg h2 {
 
 section .bg .clip-text {
     overflow: hidden;
+}
+
+.container {
+    padding: 24px;
+}
+
+.home-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position: absolute; */
+    /* height: 100%; */
+    /* width: 100%; */
+    top: 0;
+    background-size: cover;
+    background-position: center;
+
+    width: 31%;
+    margin-left: 130px;
+    border-left: 2px solid transparent;
+    border-image: linear-gradient(to bottom, red, transparent) 1 100%;
+}
+
+.title-case {
+    font-family: Mokoto;
+    font-size: 4rem;
+    padding-left: 40px;
 }
 
 /* section:after {
@@ -116,4 +167,68 @@ section::before {
 
 #about-video {
     transform: rotate(180deg);
+}
+
+.customIcon {
+    transform: rotate(270deg);
+}
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
 }

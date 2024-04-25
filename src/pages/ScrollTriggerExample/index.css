@@ -1,4 +1,4 @@
-svg,
+/* svg,
 img {
     display: block;
     width: 100%;
@@ -7,7 +7,7 @@ img {
     top: 0;
     right: 0;
     object-fit: cover;
-}
+} */
 
 .scrollElement {
     position: absolute;

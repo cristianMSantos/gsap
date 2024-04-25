@@ -7,6 +7,12 @@
   /* Formato TrueType */
 }
 
+@font-face {
+  font-family: 'Mokoto';
+  src: url('../src/assets/mokoto/Mokoto\ Demo.ttf') format('truetype');
+  /* Formato TrueType */
+}
+
 * {
   color: white;
   font-family: "Consolas", sans-serif;

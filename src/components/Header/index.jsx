@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useDispatch } from 'react-redux';
 import { setCurrentSectionIndex } from '../../store/features/SectionSlice';
+import './index.css'
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -81,13 +82,16 @@ function Header(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography
+                    {/* <Typography
                         variant="h6"
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
                         MUI
-                    </Typography>
+                    </Typography> */}
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+                        <img className='logo' src='../src/assets/logo-simbol.png' alt='logo' />
+                    </Box>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button id={`${item}Button`} key={item} sx={{ color: '#fff' }} onClick={() => handleNavItemClick(item)}>

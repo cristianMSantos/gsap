@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import './index.css'
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Observer } from "gsap/all";
@@ -54,6 +54,7 @@ export const CodeCase = () => {
         gsap.set(innerWrappers, { yPercent: -100 });
 
         const gotoSection = contextSafe((index, direction) => {
+            console.log(index)
             index = wrap(index); // make sure it's valid
             animating = true;
             let fromTop = direction === -1,
@@ -84,6 +85,9 @@ export const CodeCase = () => {
         document.getElementById("AboutButton").addEventListener("click", () => {
             gotoSection(1, 1)
         })
+        document.getElementById("ContactButton").addEventListener("click", () => {
+            gotoSection(2, 1)
+        })
 
         // goodRef.current.addEventListener("click", onClickGood);
 
@@ -106,19 +110,32 @@ export const CodeCase = () => {
     return (
         <>
 
-            <Box className="content" sx={{ p: 3 }} ref={container}>
+            <Box className="content" ref={container}>
                 <section id="home">
                     <div className="background-video">
                         <video autoPlay loop muted>
                             <source src="../src/assets/tech.mp4" type="video/mp4" />
                             Seu navegador não suporta vídeos em HTML5.
                         </video>
-                        <Grid container sx={{ zIndex: 1, position: "absolute" }}>
-                            <Grid item xs={12} className="full center" flexDirection={"column"}>
+                        <Grid className="container" container sx={{ zIndex: 1, position: "absolute", height: "100vh" }}>
+                            <Grid item xs={12} className="full center" flexDirection={"column"} sx={{ height: "100%" }}>
                                 <div className="outer">
                                     <div className="inner">
-                                        <div className="bg one full center">
-                                            <h1 className="title">{displayText}</h1>
+                                        <div className="home-title">
+                                            <h1 className="title-case">Bem Vindo a CodeCase</h1>
+                                        </div>
+                                        <div className="scroll">
+                                            <div className="chevron"></div>
+                                            <div className="chevron"></div>
+                                            <div className="chevron"></div>
+                                        </div>
+                                        <div className="home-bottom">
+                                            <h1 className="home-message">{displayText}</h1>
+                                            <Button variant="outlined"  sx={{ 
+                                                border: "2px solid", color: "white", 
+                                                borderRadius: "20px", padding: "0px 15px", height: "40px" }}>
+                                                VAMOS CONVERSAR
+                                            </Button>
                                         </div>
                                     </div>
                                 </div>
@@ -132,12 +149,31 @@ export const CodeCase = () => {
                             <source src="../src/assets/tech.mp4" type="video/mp4" />
                             Seu navegador não suporta vídeos em HTML5.
                         </video>
-                        <Grid container>
+                        <Grid className="container" container>
                             <Grid item xs={12} className="full center" flexDirection={"column"}>
                                 <div className="outer">
                                     <div className="inner">
                                         <div className="bg two full center">
                                             <h1 className="title">{'ABOUT'}</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Grid>
+                        </Grid>
+                    </div>
+                </section>
+                <section id="contact">
+                    <div className="background-video">
+                        <video autoPlay loop muted id="about-video">
+                            <source src="../src/assets/tech.mp4" type="video/mp4" />
+                            Seu navegador não suporta vídeos em HTML5.
+                        </video>
+                        <Grid className="container" container>
+                            <Grid item xs={12} className="full center" flexDirection={"column"}>
+                                <div className="outer">
+                                    <div className="inner">
+                                        <div className="bg two full center">
+                                            <h1 className="title">{'CONTACT'}</h1>
                                         </div>
                                     </div>
                                 </div>
