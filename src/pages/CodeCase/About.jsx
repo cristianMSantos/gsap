@@ -20,10 +20,10 @@ export const About = () => {
         <>
             <section id="about">
                 <div className="background-video">
-                    <video autoPlay loop muted id="about-video">
+                    {/* <video autoPlay loop muted id="about-video">
                         <source src="../src/assets/tech.mp4" type="video/mp4" />
                         Seu navegador não suporta vídeos em HTML5.
-                    </video>
+                    </video> */}
                     <Grid container sx={{ zIndex: 1, position: "absolute", height: "100vh" }}>
                         <Grid item xs={12} className="full center" sx={{ height: "100%" }}>
                             <div className="outer">

@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { TextPlugin } from "gsap/all";
 import { SlowMo } from "gsap/EasePack";
 import { About } from "./About";
+import { Contact } from "./Contact";
 
 const texts = [
     "#CONSTRUA O SOFTWARE DO SEU JEITO.",
@@ -185,25 +186,7 @@ export const CodeCase = () => {
                     </div >
                 </section>
                 <About />
-                <section id="contact">
-                    <div className="background-video">
-                        <video autoPlay loop muted id="about-video">
-                            <source src="../src/assets/tech.mp4" type="video/mp4" />
-                            Seu navegador não suporta vídeos em HTML5.
-                        </video>
-                        <Grid className="container" container>
-                            <Grid item xs={12} className="full center" flexDirection={"column"}>
-                                <div className="outer">
-                                    <div className="inner">
-                                        <div className="bg two full center">
-                                            <h1 className="title">{'CONTACT'}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </section>
+                <Contact />
             </Box>
 
         </>
