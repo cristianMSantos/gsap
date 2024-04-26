@@ -3,8 +3,11 @@ import './index.css'
 import { Box, Button, Grid, Typography } from "@mui/material";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Observer } from "gsap/all";
+import { EasePack, Observer } from "gsap/all";
 import { useSelector } from "react-redux";
+import { TextPlugin } from "gsap/all";
+import { SlowMo } from "gsap/EasePack";
+import { About } from "./About";
 
 const texts = [
     "#CONSTRUA O SOFTWARE DO SEU JEITO.",
@@ -15,6 +18,7 @@ const texts = [
 export const CodeCase = () => {
     gsap.registerPlugin(useGSAP);
     gsap.registerPlugin(Observer);
+    gsap.registerPlugin(TextPlugin, SlowMo);
     const container = useRef();
 
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -50,6 +54,9 @@ export const CodeCase = () => {
             currentIndex = -1,
             animating
 
+        let container = document.getElementById("textEffect"),
+            sentenceEndExp = /(\.|\?|!)$/g;
+
         gsap.set(outerWrappers, { yPercent: 100 });
         gsap.set(innerWrappers, { yPercent: -100 });
 
@@ -79,6 +86,39 @@ export const CodeCase = () => {
             currentIndex = index;
         });
 
+        const machineGun = (text) => {
+            var words = text.split(" "),
+                tl = gsap.timeline({ delay: 0.6, repeat: -1, repeatDelay: 2 }),
+                wordCount = words.length,
+                time = 0,
+                word, element, duration, isSentenceEnd, i;
+
+
+            for (i = 0; i < wordCount; i++) {
+                word = words[i];
+                isSentenceEnd = sentenceEndExp.test(word);
+
+                element = container.appendChild(document.createElement("h3").appendChild(document.createTextNode(word)).parentNode);
+                console.log(element)
+
+                duration = Math.max(0.5, word.length * 0.08); // Palavras mais longas levam mais tempo para ler, então ajuste o tempo. Mínimo de 0.5 segundos.
+                if (isSentenceEnd) {
+                    duration += 0.6; // Se for a última palavra de uma frase, adicione um pouco mais de tempo para uma pausa dramática.
+                }
+                // Defina a opacidade e a escala como 0 inicialmente. Definimos z como 0,01 apenas para ativar a renderização 3D no navegador, o que torna as coisas mais suaves.
+                gsap.set(element, { opacity: 0, scale: 0, z: 0.01 });
+                // A facilidade SlowMo é como uma easeOutIn, mas é configurável em termos de força e por quanto tempo a inclinação é linear.
+                tl.to(element, { duration: duration, scale: 1.2, ease: "slow(0.25, 0.9)" }, time)
+                    // Note que o terceiro parâmetro da configuração SlowMo no seguinte tween é true - isso faz com que ele yoyo, ou seja, a opacidade (autoAlpha) aumentará para 1 durante o tween e depois voltará para 0 no final.
+                    .to(element, { duration: duration, opacity: 1, ease: "slow(0.25, 0.9, true)" }, time)
+                // .to(element, { duration: 0.5, opacity: 0 }, time + duration);
+                time += duration - 0.05;
+                if (isSentenceEnd) {
+                    time += 0.6; // No final de uma frase, adicione uma pausa para efeito dramático.
+                }
+            }
+        }
+
         document.getElementById("HomeButton").addEventListener("click", () => {
             gotoSection(0, 1)
         })
@@ -99,13 +139,12 @@ export const CodeCase = () => {
             tolerance: 10,
             preventDefault: true
         });
+
         gotoSection(0, 1);
+
+        machineGun("CONSTRUA O SEU SITE SOFTWARE APP DO SEU JEITO.");
+
     }, { scope: container });
-
-    useEffect(() => {
-        // gotoSection(1, 1)
-    }, [currentSectionIndex])
-
 
     return (
         <>
@@ -121,8 +160,9 @@ export const CodeCase = () => {
                             <Grid item xs={12} className="full center" flexDirection={"column"} sx={{ height: "100%" }}>
                                 <div className="outer">
                                     <div className="inner">
-                                        <div className="home-title">
-                                            <h1 className="title-case">Bem Vindo a CodeCase</h1>
+                                        <div id="textEffect" className="home-title">
+                                            {/* <h1 className="title-case">Bem Vindo a CodeCase</h1> */}
+                                            {/* <h1 className="title-case"></h1> */}
                                         </div>
                                         <div className="scroll">
                                             <div className="chevron"></div>
@@ -131,9 +171,10 @@ export const CodeCase = () => {
                                         </div>
                                         <div className="home-bottom">
                                             <h1 className="home-message">{displayText}</h1>
-                                            <Button variant="outlined"  sx={{ 
-                                                border: "2px solid", color: "white", 
-                                                borderRadius: "20px", padding: "0px 15px", height: "40px" }}>
+                                            <Button variant="outlined" sx={{
+                                                border: "2px solid", color: "white",
+                                                borderRadius: "20px", padding: "0px 15px", height: "40px"
+                                            }}>
                                                 VAMOS CONVERSAR
                                             </Button>
                                         </div>
@@ -143,25 +184,7 @@ export const CodeCase = () => {
                         </Grid>
                     </div >
                 </section>
-                <section id="about">
-                    <div className="background-video">
-                        <video autoPlay loop muted id="about-video">
-                            <source src="../src/assets/tech.mp4" type="video/mp4" />
-                            Seu navegador não suporta vídeos em HTML5.
-                        </video>
-                        <Grid className="container" container>
-                            <Grid item xs={12} className="full center" flexDirection={"column"}>
-                                <div className="outer">
-                                    <div className="inner">
-                                        <div className="bg two full center">
-                                            <h1 className="title">{'ABOUT'}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </section>
+                <About />
                 <section id="contact">
                     <div className="background-video">
                         <video autoPlay loop muted id="about-video">
