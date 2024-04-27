@@ -41,14 +41,15 @@ export const About = () => {
                                             </div>
                                         </li>
                                         <li className='item' style={{
-                                            backgroundImage: "url('https://i.redd.it/tc0aqpv92pn21.jpg')"
+                                            backgroundImage: "url('../src/assets/themasterpizza.png')"
+                                            // backgroundImage: "url('https://i.redd.it/tc0aqpv92pn21.jpg')"
                                         }}>
                                             <div className='content-about'>
-                                                < h2 className='title-about'>"Estrange Bond"</h2>
+                                                < h2 className='title-about'>"The Master Pizza"</h2>
                                                 <p className='description'> Lorem ipsum, dolor sit amet consectetur
                                                     adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                                                     praesentium nisi. Id laboriosam ipsam enim.  </p>
-                                                <button>Read More</button>
+                                                <button>Visite</button>
                                             </div>
                                         </li>
                                         <li className='item' style={{ backgroundImage: "url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')" }}>
@@ -57,7 +58,7 @@ export const About = () => {
                                                 <p className='description'> Lorem ipsum, dolor sit amet consectetur
                                                     adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                                                     praesentium nisi. Id laboriosam ipsam enim.  </p>
-                                                <button>Read More</button>
+                                                <button>Visite</button>
                                             </div>
                                         </li>
                                         <li className='item' style={{ backgroundImage: "url('https://images7.alphacoders.com/878/878663.jpg')" }}>
@@ -66,7 +67,7 @@ export const About = () => {
                                                 <p className='description'>
                                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
                                                 </p>
-                                                <button>Read More</button>
+                                                <button>Visite</button>
                                             </div>
                                         </li>
                                         <li className='item' style={{ backgroundImage: "url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')" }}>

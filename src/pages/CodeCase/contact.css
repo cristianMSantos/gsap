@@ -1,9 +1,68 @@
 .contact-title {
-    font-size: 45px;
+    font-size: 3em;
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    color: #a700ff;
+    font-weight: 600;
     padding: 0;
     margin: 0;
 }
 
 .contact-subtitle {
-    font-size: 19px;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
+
+.contact-title-fields {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.container-grid {
+    background: rgb(0 0 0 / 70%);
+    padding: 35px;
+}
+
+.contact-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-form {
+    width: 50%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 600px) {
+    .contact-form{
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+}
+

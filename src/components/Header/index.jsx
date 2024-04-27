@@ -44,8 +44,8 @@ function Header(props) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+            <Typography variant="h6" sx={{ my: 2 }} className='logo-text'>
+                CODE CASE
             </Typography>
             <Divider />
             <List>
@@ -82,16 +82,26 @@ function Header(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    {/* <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        MUI
-                    </Typography> */}
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-                        <img className='logo' src='../src/assets/logo-simbol.png' alt='logo' />
-                    </Box>
+                    <div className='div-logo'>
+                        <Typography
+                            className='logo-text'
+                            variant="h6"
+                            component="div"
+                        >
+                            CODE
+                        </Typography>
+                        <Box>
+                            <img className='logo' src='../src/assets/logo-simbol.png' alt='logo' />
+                        </Box>
+                        <Typography
+                            className='logo-text'
+                            variant="h6"
+                            component="div"
+                        >
+                            CASE
+                        </Typography>
+                    </div>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }} s />
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Button id={`${item}Button`} key={item} sx={{ color: '#fff' }} onClick={() => handleNavItemClick(item)}>
@@ -112,7 +122,7 @@ function Header(props) {
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: '#0b0b0bf5' },
                     }}
                 >
                     {drawer}

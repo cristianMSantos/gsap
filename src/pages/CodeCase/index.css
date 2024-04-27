@@ -162,7 +162,15 @@ section .bg .clip-text {
     font-size: 120px;
     /* top: 65px; */
     z-index: 9999;
-} 
+}
+
+.button-home {
+    border: 2px solid !important;
+    color: white !important;
+    border-radius: 20px !important;
+    padding: 0px 15px !important;
+    height: 40px !important;
+}
 
 /* section:after {
     content: "";
@@ -236,6 +244,10 @@ section::before {
     transform: skew(0deg, -30deg);
 }
 
+.buttom-mobile-div {
+    display: none;
+}
+
 @keyframes move {
     25% {
         opacity: 1;
@@ -255,5 +267,41 @@ section::before {
     100% {
         opacity: 0;
         transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+@media (max-width: 600px) {
+    #textEffect h3 {
+        font-size: 60px;
+    }
+
+    .home-message {
+        font-size: 10px;
+    }
+
+    .scroll {
+        position: fixed;
+        right: 10%;
+        bottom: 10%;
+    }
+
+    .button-home {
+        display: none !important;
+    }
+
+    .button-mobile {
+        border: 2px solid !important;
+        color: white !important;
+        border-radius: 20px !important;
+        padding: 0px 15px !important;
+        height: 40px !important;
+    }
+
+    .buttom-mobile-div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: fixed;
+        bottom: 20%;
     }
 }

@@ -165,6 +165,16 @@ export const CodeCase = () => {
                                             {/* <h1 className="title-case">Bem Vindo a CodeCase</h1> */}
                                             {/* <h1 className="title-case"></h1> */}
                                         </div>
+                                        <div>
+                                            <img src="../src/assets/Job opening.gif" alt="teste" style={{
+                                                transform: 'scaleX(-1)', width: '70%'
+                                            }} />
+                                        </div>
+                                        <div className="buttom-mobile-div">
+                                            <Button variant="outlined" className="button-mobile">
+                                                VAMOS CONVERSAR
+                                            </Button>
+                                        </div>
                                         <div className="scroll">
                                             <div className="chevron"></div>
                                             <div className="chevron"></div>
@@ -172,10 +182,7 @@ export const CodeCase = () => {
                                         </div>
                                         <div className="home-bottom">
                                             <h1 className="home-message">{displayText}</h1>
-                                            <Button variant="outlined" sx={{
-                                                border: "2px solid", color: "white",
-                                                borderRadius: "20px", padding: "0px 15px", height: "40px"
-                                            }}>
+                                            <Button variant="outlined" className="button-home">
                                                 VAMOS CONVERSAR
                                             </Button>
                                         </div>
