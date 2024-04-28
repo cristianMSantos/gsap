@@ -7,8 +7,9 @@ import { EasePack, Observer } from "gsap/all";
 import { useSelector } from "react-redux";
 import { TextPlugin } from "gsap/all";
 import { SlowMo } from "gsap/EasePack";
-import { About } from "./About";
+import { Project } from "./Project";
 import { Contact } from "./Contact";
+import { About } from "./About";
 
 const texts = [
     "#CONSTRUA O SOFTWARE DO SEU JEITO.",
@@ -123,11 +124,14 @@ export const CodeCase = () => {
         document.getElementById("HomeButton").addEventListener("click", () => {
             gotoSection(0, 1)
         })
-        document.getElementById("AboutButton").addEventListener("click", () => {
+        document.getElementById("ProjectButton").addEventListener("click", () => {
             gotoSection(1, 1)
         })
-        document.getElementById("ContactButton").addEventListener("click", () => {
+        document.getElementById("AboutButton").addEventListener("click", () => {
             gotoSection(2, 1)
+        })
+        document.getElementById("ContactButton").addEventListener("click", () => {
+            gotoSection(3, 1)
         })
 
         // goodRef.current.addEventListener("click", onClickGood);
@@ -165,11 +169,11 @@ export const CodeCase = () => {
                                             {/* <h1 className="title-case">Bem Vindo a CodeCase</h1> */}
                                             {/* <h1 className="title-case"></h1> */}
                                         </div>
-                                        <div>
+                                        {/* <div>
                                             <img src="../src/assets/Job opening.gif" alt="teste" style={{
                                                 transform: 'scaleX(-1)', width: '70%'
                                             }} />
-                                        </div>
+                                        </div> */}
                                         <div className="buttom-mobile-div">
                                             <Button variant="outlined" className="button-mobile">
                                                 VAMOS CONVERSAR
@@ -179,6 +183,7 @@ export const CodeCase = () => {
                                             <div className="chevron"></div>
                                             <div className="chevron"></div>
                                             <div className="chevron"></div>
+                                            <span className="scroll-text">ROLE PARA BAIXO</span>
                                         </div>
                                         <div className="home-bottom">
                                             <h1 className="home-message">{displayText}</h1>
@@ -192,6 +197,7 @@ export const CodeCase = () => {
                         </Grid>
                     </div >
                 </section>
+                <Project />
                 <About />
                 <Contact />
             </Box>

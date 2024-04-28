@@ -19,7 +19,7 @@ import { setCurrentSectionIndex } from '../../store/features/SectionSlice';
 import './index.css'
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Home', 'Project', 'About', 'Contact'];
 
 function Header(props) {
     const { window } = props;

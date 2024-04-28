@@ -45,7 +45,7 @@
 }
 
 @media (max-width: 600px) {
-    .contact-form{
+    .contact-form {
         width: 100%;
     }
 
@@ -64,5 +64,8 @@
     .container-grid {
         padding: 35px;
     }
-}
 
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+}

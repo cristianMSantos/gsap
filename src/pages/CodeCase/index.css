@@ -16,6 +16,10 @@
     /* Garante que o vídeo cubra todo o espaço disponível */
 }
 
+.overlay {
+    background: rgb(0 0 0 / 70%);
+}
+
 .content {
     position: absolute;
     width: 100%;
@@ -50,7 +54,27 @@
 .scroll {
     position: fixed;
     right: 50%;
-    bottom: 10%;
+    bottom: 0%;
+    z-index: 1;
+}
+
+.scroll-text {
+    display: block;
+    margin-top: 75px;
+    margin-left: -42px;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
 }
 
 /* Estilo do cursor de digitação */
@@ -281,8 +305,9 @@ section::before {
 
     .scroll {
         position: fixed;
-        right: 10%;
-        bottom: 10%;
+        right: 0%;
+        bottom: 0%;
+        z-index: 1;
     }
 
     .button-home {
