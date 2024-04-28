@@ -94,9 +94,13 @@
 }
 
 .nav {
+    display: flex;
+    justify-content: center;
     position: absolute;
-    bottom: 2rem;
-    left: 54%;
+    /* bottom: 2rem;
+    left: 54%; */
+    bottom: 12rem;
+    right: 0;
     transform: translateX(-50%);
     z-index: 5;
     user-select: none;
@@ -119,6 +123,7 @@
 .scroll-project {
     position: fixed;
     right: 50%;
+    left: 50%;
     bottom: 2%;
     z-index: 1;
 }
@@ -163,12 +168,14 @@
     .scroll-project {
         position: fixed;
         right: 0%;
+        left: unset;
         bottom: 2%;
         z-index: 1;
     }
 
     .nav {
         left: 50%;
+        bottom: 2rem;
     }
 
     .content-project .title-project {
