@@ -1,16 +1,16 @@
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 import Router from "./routes";
-import store from "./store/store";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
 function App() {
+  const defaultTheme = createTheme();
+  
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-    </Provider>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <Router />
+    </ThemeProvider>
   );
 }
+
 
 export default App;

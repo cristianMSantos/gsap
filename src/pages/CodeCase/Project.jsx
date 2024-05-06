@@ -17,7 +17,7 @@ export const Project = () => {
     }
 
     return (
-        <>
+        
             <section id="project">
                 <div className="background-video">
                     {/* <video autoPlay loop muted id="project-video">
@@ -106,10 +106,10 @@ export const Project = () => {
 
                                 </div>
                             </div>
-                        </Grid >
-                    </Grid >
-                </div >
-            </section >
-        </>
+                        </Grid>
+                    </Grid>
+                </div>
+            </section>
+        
     )
 }

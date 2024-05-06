@@ -44,7 +44,42 @@
     align-items: center;
 }
 
-@media (max-width: 600px) {
+/* Para telas com resolução HD (1920x1080) ou superior */
+@media screen and (min-resolution: 192dpi) {
+    .contact-title {
+        font-size: 3em;
+    }
+
+    .contact-subtitle {
+        font-size: 1.5em;
+    }
+}
+
+/* Para telas com resolução 4K (3840x2160) ou superior */
+@media screen and (min-resolution: 288dpi) {
+    .contact-title {
+        font-size: 3.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 2em;
+    }
+}
+
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+    .contact-title {
+        font-size: 2.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+    }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .contact-form {
         width: 100%;
     }
@@ -69,3 +104,197 @@
         padding-top: 0 !important;
     }
 }
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+        display: none;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+        display: none;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+        display: none;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+        display: none;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+        display: none;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+        display: none;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+}
+
+/* @media (max-width: 600px) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-title {
+        font-size: 1.5em;
+    }
+
+    .contact-subtitle {
+        font-size: 1em;
+    }
+
+    .contact-title-fields {
+        font-size: 15px;
+    }
+
+    .container-grid {
+        padding: 35px;
+    }
+
+    .contact-grid {
+        padding-top: 0 !important;
+    }
+} */

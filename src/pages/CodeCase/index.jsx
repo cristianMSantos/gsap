@@ -152,8 +152,8 @@ export const CodeCase = () => {
     }, { scope: container });
 
     return (
-        <>
-
+        
+            
             <Box className="content" ref={container}>
                 <section id="home">
                     <div className="background-video">
@@ -202,6 +202,6 @@ export const CodeCase = () => {
                 <Contact />
             </Box>
 
-        </>
+        
     )
 }
