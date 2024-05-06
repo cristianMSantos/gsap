@@ -91,7 +91,7 @@ function Header(props) {
                             CODE
                         </Typography>
                         <Box>
-                            <img className='logo' src='../src/assets/logo-simbol.png' alt='logo' />
+                            <img className='logo' src='image/logo-simbol.png' alt='logo' />
                         </Box>
                         <Typography
                             className='logo-text'

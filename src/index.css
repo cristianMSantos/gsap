@@ -5,13 +5,13 @@
 
 @font-face {
   font-family: 'Consolas';
-  src: url('../src/assets/Consolas-Font/CONSOLA.TTF') format('truetype');
+  src: url('/Consolas-Font/CONSOLA.TTF') format('truetype');
   /* Formato TrueType */
 }
 
 @font-face {
   font-family: 'Mokoto';
-  src: url('../src/assets/mokoto/Mokoto\ Demo.ttf') format('truetype');
+  src: url('/mokoto/Mokoto\ Demo.ttf') format('truetype');
   /* Formato TrueType */
 }
 

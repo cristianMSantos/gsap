@@ -19,7 +19,7 @@ const Router = () => {
             element: <Layout />,
             children: [
                 {
-                    element: <CodeCase to="/home" />,
+                    element: <CodeCase />,
                     index: true,
                 }
             ]

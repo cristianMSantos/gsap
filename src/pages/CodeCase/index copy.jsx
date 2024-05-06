@@ -55,7 +55,7 @@ export const CodeCase = () => {
         <>
             <div className="background-video">
                 <video autoPlay loop muted>
-                    <source src="../src/assets/tech.mp4" type="video/mp4" />
+                    <source src="./tech.mp4" type="video/mp4" />
                     Seu navegador não suporta vídeos em HTML5.
                 </video>
                 <Box className="content" sx={{ p: 3 }}>

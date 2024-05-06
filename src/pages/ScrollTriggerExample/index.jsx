@@ -33,9 +33,9 @@ export const ScrollTriggerExample = () => {
         <>
             <div ref={container}>
                 <div>
-                    <img id="scene2" src="../src/assets/sol.svg" alt="Descrição da imagem SVG" />
+                    <img id="scene2" src="./sol.svg" alt="Descrição da imagem SVG" />
                     <div className="sceneWrapper">
-                        <img id="scene1" src="../src/assets/4.svg" alt="Descrição da imagem SVG" />
+                        <img id="scene1" src="./4.svg" alt="Descrição da imagem SVG" />
                         <div className="light-overlay">
                             <div className="sun-rays"></div>
                         </div>

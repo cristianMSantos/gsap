@@ -36,7 +36,7 @@ export const Contact = () => {
         <section id="contact">
             <div className="background-video">
                 <video autoPlay loop muted id="about-video">
-                    <source src="../src/assets/tech.mp4" type="video/mp4" />
+                    <source src="./tech.mp4" type="video/mp4" />
                     Seu navegador não suporta vídeos em HTML5.
                 </video>
                 <Grid className="container overlay" container sx={{ zIndex: 1, position: "absolute", height: "100vh" }}>

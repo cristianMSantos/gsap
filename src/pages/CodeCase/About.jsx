@@ -15,7 +15,7 @@ export const About = () => {
         <section id="about">
             <div className="background-video">
                 <video autoPlay loop muted id="about-video">
-                    <source src="../src/assets/tech.mp4" type="video/mp4" />
+                    <source src="./tech.mp4" type="video/mp4" />
                     Seu navegador não suporta vídeos em HTML5.
                 </video>
                 <Grid className="container overlay" container sx={{ zIndex: 1, position: "absolute", height: "100vh" }}>
@@ -36,7 +36,7 @@ export const About = () => {
                                     </Grid>
                                     <Grid item xs={12} md={6} className="about-message" flexDirection={'column'}>
                                         {/* <img className="about-logo" src="../src/assets/logo.png" alt="logo" /> */}
-                                        <img src="../src/assets/Job opening.gif" alt="teste" style={{
+                                        <img src="./Job opening.gif" alt="teste" style={{
                                             transform: 'scaleX(-1)', width: '70%'
                                         }} />
                                     </Grid>

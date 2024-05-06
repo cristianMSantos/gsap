@@ -41,7 +41,7 @@ export const Project = () => {
                                             </div>
                                         </li>
                                         <li className='item' style={{
-                                            backgroundImage: "url('../src/assets/themasterpizza.png')"
+                                            backgroundImage: "url('/image/themasterpizza.png')"
                                             // backgroundImage: "url('https://i.redd.it/tc0aqpv92pn21.jpg')"
                                         }}>
                                             <div className='content-project'>
