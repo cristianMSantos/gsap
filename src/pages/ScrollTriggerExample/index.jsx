@@ -21,7 +21,7 @@ export const ScrollTriggerExample = () => {
             scrub: 3,
         });
 
-        scene2.fromTo("#scene2", { y: "100vh" }, { y: "0%", duration: 1 }); // Animação para mover o sol para cima
+        scene2.fromTo("#scene2", { y: "100%" }, { y: "0%", duration: 1 }); // Animação para mover o sol para cima
         // // Animação para remover gradualmente o filtro greyscale
         // scene2.to("#scene1", { filter: "grayscale(0)", duration: 2.5, ease: "power1.out" }, 0);
         // Animação para aplicar gradualmente a luz no chão

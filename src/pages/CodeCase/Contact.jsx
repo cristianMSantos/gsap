@@ -39,7 +39,13 @@ export const Contact = () => {
                     <source src="./tech.mp4" type="video/mp4" />
                     Seu navegador não suporta vídeos em HTML5.
                 </video>
-                <Grid className="container overlay" container sx={{ zIndex: 1, position: "absolute", height: "100vh" }}>
+                <Grid className="container overlay" container sx={{
+                    zIndex: 1, position: "absolute", /*height: "100vh",*/
+                    height: "100%",
+                    minHeight: '-moz-available',
+                    minHeight: '-webkit-fill-available',
+                    minHeight: 'fill-available'
+                }}>
                     <Grid item xs={12} md={12} className="full center" sx={{ height: "100%" }}>
                         <div className="outer">
                             <div className="inner">
@@ -116,7 +122,7 @@ export const Contact = () => {
                                             </Button>
                                         </Box>
                                     </Grid>
-                                    <div className="scroll">
+                                    <div className="scroll-contact">
                                         <div className="chevron"></div>
                                         <div className="chevron"></div>
                                         <div className="chevron"></div>

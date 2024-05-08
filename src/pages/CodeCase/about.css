@@ -49,6 +49,14 @@
     width: 100%;
 }
 
+.scroll-about {
+    position: fixed;
+    right: 50%;
+    left: 50%;
+    bottom: 2%;
+    z-index: 1;
+}
+
 /* Para telas com resolução HD (1920x1080) ou superior */
 @media screen and (min-resolution: 192dpi) {
     .about-title {
@@ -100,6 +108,10 @@
 
 /* For Tablet View */
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .scroll-about {
+        display: none;
+    }
+
     .about-title {
         font-size: 1.5em;
     }
@@ -119,6 +131,10 @@
 
 /* For Mobile Portrait View */
 @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .scroll-about {
+        display: none;
+    }
+
     .about-title {
         font-size: 1.5em;
     }
@@ -138,6 +154,11 @@
 
 /* For Mobile Landscape View */
 @media screen and (max-device-width: 640px) and (orientation: landscape) {
+    .scroll-about {
+        display: none;
+    }
+
+
     .about-title {
         font-size: 1.5em;
     }
@@ -157,6 +178,10 @@
 
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
+    .scroll-about {
+        display: none;
+    }
+
     .about-title {
         font-size: 1.5em;
     }
@@ -176,6 +201,10 @@
 
 /* For iPhone 4 Portrait or Landscape View */
 @media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .scroll-about {
+        display: none;
+    }
+
     .about-title {
         font-size: 1.5em;
     }
@@ -195,6 +224,10 @@
 
 /* For iPhone 5 Portrait or Landscape View */
 @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .scroll-about {
+        display: none;
+    }
+
     .about-title {
         font-size: 1.5em;
     }
@@ -214,6 +247,10 @@
 
 /* For iPhone 6 and 6 plus Portrait or Landscape View */
 @media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    .scroll-about {
+        display: none;
+    }
+
     .about-title {
         font-size: 1.5em;
     }

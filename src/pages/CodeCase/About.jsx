@@ -5,10 +5,25 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 
 export const About = () => {
     const [value, setValue] = React.useState('1');
+    const [isMobile, setIsMobile] = React.useState(
+        window.matchMedia("(max-width: 900px)").matches
+    );
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    React.useEffect(() => {
+        const handleWindowResize = () => {
+            setIsMobile(window.matchMedia("(max-width: 900px)").matches);
+        };
+
+        window.addEventListener("resize", handleWindowResize);
+
+        return () => {
+            window.removeEventListener("resize", handleWindowResize);
+        };
+    }, []);
 
     return (
 
@@ -18,7 +33,13 @@ export const About = () => {
                     <source src="./tech.mp4" type="video/mp4" />
                     Seu navegador não suporta vídeos em HTML5.
                 </video>
-                <Grid className="container overlay" container sx={{ zIndex: 1, position: "absolute", height: "100vh" }}>
+                <Grid className="container overlay" container sx={{
+                    zIndex: 1, position: "absolute", /*height: "100vh",*/
+                    height: "100%",
+                    minHeight: '-moz-available',
+                    minHeight: '-webkit-fill-available',
+                    minHeight: 'fill-available'
+                }}>
                     <Grid item xs={12} className="full center" sx={{ height: "100%" }}>
                         <div className="outer">
                             <div className="inner">
@@ -27,12 +48,21 @@ export const About = () => {
                                 <Grid container spacing={2} sx={{ height: "100%" }}>
                                     <Grid item xs={12} md={6} className="about-message" flexDirection={'column'}>
                                         <h1 className="about-title">QUEM SOMOS NÓS</h1>
-                                        <h2 className="about-subtitle">
-                                            "A CodeCase nasceu da união de cinco amigos apaixonados por tecnologia e inovação.
-                                            Nossa inspiração veio da convicção de que a tecnologia pode causar um impacto positivo na vida das pessoas.
-                                            Com uma equipe diversificada, mas unida por essa paixão comum, cada um de nós traz uma bagagem única de
-                                            experiências e habilidades, abrangendo programação, desenvolvimento de software, design e gestão de projetos."
-                                        </h2>
+                                        {
+                                            !isMobile ?
+                                                <h2 className="about-subtitle">
+                                                    "A CodeCase nasceu da união de cinco amigos apaixonados por tecnologia e inovação.
+                                                    Nossa inspiração veio da convicção de que a tecnologia pode causar um impacto positivo na vida das pessoas.
+                                                    Com uma equipe diversificada, mas unida por essa paixão comum, cada um de nós traz uma bagagem única de
+                                                    experiências e habilidades, abrangendo programação, desenvolvimento de software, design e gestão de projetos."
+                                                </h2>
+                                                :
+                                                <h2 className="about-subtitle">
+                                                    "A CodeCase nasceu da união de cinco amigos apaixonados por tecnologia e inovação.
+                                                    Nossa inspiração veio da convicção de que a tecnologia pode causar um impacto positivo na vida das pessoas."
+                                                </h2>
+
+                                        }
                                     </Grid>
                                     <Grid item xs={12} md={6} className="about-message" flexDirection={'column'}>
                                         {/* <img className="about-logo" src="../src/assets/logo.png" alt="logo" /> */}
@@ -78,7 +108,7 @@ export const About = () => {
                                             </TabContext>
                                         </Grid>
                                     </Box>
-                                    <div className="scroll">
+                                    <div className="scroll-about">
                                         <div className="chevron"></div>
                                         <div className="chevron"></div>
                                         <div className="chevron"></div>

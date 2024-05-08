@@ -141,67 +141,109 @@ export const CodeCase = () => {
             wheelSpeed: -1,
             onDown: () => !animating && gotoSection(currentIndex - 1, -1),
             onUp: () => !animating && gotoSection(currentIndex + 1, 1),
+            onWheel: () => {
+
+                const home = document.querySelectorAll("#home");
+                const styleHome = getComputedStyle(home[0]);
+
+                setTimeout(() => {
+                    if (styleHome.visibility === "visible") {
+                        gsap.timeline()
+                            .to('.div-logo', {
+                                right: "50%",
+                                rotation: 0,
+                                position: "absolute",
+                                duration: 3, // Duração da animação
+                                ease: "elastic", // Tipo de suavização da animação
+                            })
+                            .to('.logo-text', {
+                                opacity: 1,
+                                duration: 1
+                            });
+                    } else {
+
+                        gsap.timeline()
+                            .to('.logo-text', {
+                                opacity: 0,
+                                duration: 1
+                            })
+                            .to('.div-logo', {
+                                position: "fixed", // Defina a posição absoluta para poder usar as propriedades de posicionamento
+                                right: 0, // Posicione a logo no canto direito,
+                                rotation: 360,
+                                duration: 3, // Duração da animação
+                                ease: "elastic", // Tipo de suavização da animação
+                            });
+                    }
+                }, 1300);
+            },
             tolerance: 10,
             preventDefault: true
         });
 
         gotoSection(0, 1);
 
-        machineGun("CONSTRUA O SEU SITE SOFTWARE APP DO SEU JEITO.");
 
+        machineGun("CONSTRUA O SEU SITE SOFTWARE APP DO SEU JEITO.");
     }, { scope: container });
 
     return (
-        
-            
-            <Box className="content" ref={container}>
-                <section id="home">
-                    <div className="background-video">
-                        <video autoPlay loop muted>
-                            <source src="./tech.mp4" type="video/mp4" />
-                            Seu navegador não suporta vídeos em HTML5.
-                        </video>
-                        <Grid className="container" container sx={{ zIndex: 1, position: "absolute", height: "100vh" }}>
-                            <Grid item xs={12} className="full center" flexDirection={"column"} sx={{ height: "100%" }}>
-                                <div className="outer">
-                                    <div className="inner">
-                                        <div id="textEffect" className="home-title">
-                                            {/* <h1 className="title-case">Bem Vindo a CodeCase</h1> */}
-                                            {/* <h1 className="title-case"></h1> */}
-                                        </div>
-                                        {/* <div>
+
+
+        <Box className="content" ref={container}>
+            <section id="home">
+                <div className="background-video">
+                    <video autoPlay loop muted>
+                        <source src="./tech.mp4" type="video/mp4" />
+                        Seu navegador não suporta vídeos em HTML5.
+                    </video>
+                    <Grid className="container" container sx={{
+                        zIndex: 1, position: "absolute", /*height: "100vh",*/
+                        height: "100%",
+                        minHeight: '-moz-available',
+                        minHeight: '-webkit-fill-available',
+                        minHeight: 'fill-available'
+                    }}>
+                        <Grid item xs={12} className="full center" flexDirection={"column"} sx={{ height: "100%" }}>
+                            <div className="outer">
+                                <div className="inner">
+                                    <div id="textEffect" className="home-title">
+                                        {/* <h1 className="title-case">Bem Vindo a CodeCase</h1> */}
+                                        {/* <h1 className="title-case"></h1> */}
+                                    </div>
+                                    {/* <div>
                                             <img src="../src/assets/Job opening.gif" alt="teste" style={{
                                                 transform: 'scaleX(-1)', width: '70%'
                                             }} />
                                         </div> */}
-                                        <div className="buttom-mobile-div">
-                                            <Button variant="outlined" className="button-mobile">
-                                                VAMOS CONVERSAR
-                                            </Button>
-                                        </div>
-                                        <div className="scroll">
-                                            <div className="chevron"></div>
-                                            <div className="chevron"></div>
-                                            <div className="chevron"></div>
-                                            <span className="scroll-text">ROLE PARA BAIXO</span>
-                                        </div>
-                                        <div className="home-bottom">
-                                            <h1 className="home-message">{displayText}</h1>
-                                            <Button variant="outlined" className="button-home">
-                                                VAMOS CONVERSAR
-                                            </Button>
-                                        </div>
+                                    <div className="buttom-mobile-div">
+                                        <Button variant="outlined" className="button-mobile">
+                                            VAMOS CONVERSAR
+                                        </Button>
+                                    </div>
+                                    <div className="scroll">
+                                        <div className="chevron"></div>
+                                        <div className="chevron"></div>
+                                        <div className="chevron"></div>
+                                        <span className="scroll-text">ROLE PARA BAIXO</span>
+                                    </div>
+                                    <div className="home-bottom">
+                                        <h1 className="home-message">{displayText}</h1>
+                                        <Button variant="outlined" className="button-home">
+                                            VAMOS CONVERSAR
+                                        </Button>
                                     </div>
                                 </div>
-                            </Grid>
+                            </div>
                         </Grid>
-                    </div >
-                </section>
-                <Project />
-                <About />
-                <Contact />
-            </Box>
+                    </Grid>
+                </div >
+            </section>
+            <Project />
+            <About />
+            <Contact />
+        </Box>
 
-        
+
     )
 }

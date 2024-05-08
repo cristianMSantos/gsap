@@ -17,6 +17,9 @@ import Button from '@mui/material/Button';
 import { useDispatch } from 'react-redux';
 import { setCurrentSectionIndex } from '../../store/features/SectionSlice';
 import './index.css'
+import { useGSAP } from "@gsap/react";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'Project', 'About', 'Contact'];
@@ -25,6 +28,22 @@ function Header(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const dispatch = useDispatch();
+    const header = React.useRef();
+    gsap.registerPlugin(useGSAP);
+    gsap.registerPlugin(ScrollTrigger);
+
+    // useGSAP(() => {
+    //     let logo = gsap.utils.toArray(".div-logo");
+
+    //     gsap.to(logo, {
+    //         scrollTrigger: '#about', // start the animation when ".box" enters the viewport (once)
+    //         position: "fixed", // Defina a posição absoluta para poder usar as propriedades de posicionamento
+    //         right: 0, // Posicione a logo no canto direito
+    //         duration: 3, // Duração da animação
+    //         ease: "elastic" // Tipo de suavização da animação
+
+    //     });
+    // });
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -64,7 +83,7 @@ function Header(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} ref={header}>
             <CssBaseline />
             <AppBar component="nav" sx={{
                 "&.MuiAppBar-root": {
