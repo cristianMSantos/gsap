@@ -3,7 +3,7 @@ import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
 function App() {
   const defaultTheme = createTheme();
-  
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
@@ -11,6 +11,5 @@ function App() {
     </ThemeProvider>
   );
 }
-
 
 export default App;
