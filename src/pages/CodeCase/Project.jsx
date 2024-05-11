@@ -39,24 +39,109 @@ export const Project = () => {
               <div className="inner">
                 {/* <h1 className="title-project">{'project'}</h1> */}
                 <ul className="slider">
-                  {/* <li
+                  <li
                     className="item"
                     style={{
-                      backgroundImage:
-                        "url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')",
+                      backgroundImage: "url('/image/greicy.png')",
                     }}
                   >
                     <div className="content-project">
-                      <h2 className="title-project">"Lossless Youths"</h2>
+                      <h2 className="title-project">Psicóloga Greicy Pais</h2>
                       <p className="description">
-                        {" "}
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Tempore fuga voluptatum, iure corporis inventore
-                        praesentium nisi. Id laboriosam ipsam enim.{" "}
+                        Doutoranda em Psicologia, graduada em Psicologia e
+                        Enfermagem, com especialização em Neuropsicologia, MBA
+                        em Gestão de Pessoas e Coach, Terapias Cognitivas*,
+                        Acupuntura* e Urgência e Emergência.
                       </p>
-                      <button>Read More</button>
+                      <button>
+                        <a
+                          href="https://psicologagreicypais.com.br/"
+                          style={{ textDecoration: "none" }}
+                        >
+                          Visite
+                        </a>
+                      </button>
                     </div>
-                  </li> */}
+                  </li>
+                  <li
+                    className="item"
+                    style={{
+                      backgroundImage: "url('/image/themasterpizza.png')",
+                      // backgroundImage: "url('https://i.redd.it/tc0aqpv92pn21.jpg')"
+                    }}
+                  >
+                    <div className="content-project">
+                      <h2 className="title-project">The Master Pizza</h2>
+                      <p className="description">
+                        Pizzaria especializada em eventos que leva a excelência
+                        dos sabores até você. Descubra um mundo de sabores
+                        únicos e experiências gastronômicas incríveis,
+                        cuidadosamente preparadas por uma equipe especializada.
+                        Transforme seu evento em uma verdadeira festa para o
+                        paladar.
+                      </p>
+                      <button>
+                        <a
+                          href="https://themasterpizza.com.br/"
+                          style={{ textDecoration: "none" }}
+                        >
+                          Visite
+                        </a>
+                      </button>
+                    </div>
+                  </li>
+                  <li
+                    className="item"
+                    style={{
+                      backgroundImage: "url('/image/decorfabri.png')",
+                    }}
+                  >
+                    <div className="content-project">
+                      <h2 className="title-project">Decor Fabri</h2>
+                      <p className="description">
+                        Equipe dedicada a revolucionar o setor de móveis
+                        planejados, fornecendo aos clientes o conhecimento, as
+                        ferramentas e a compreensão necessárias para que eles
+                        possam criar ambientes que expressem sua essência e
+                        impulsionem seu bem-estar. Trabalham para construir um
+                        futuro onde a harmonia entre design e funcionalidade
+                        seja a base para um estilo de vida mais inspirador e
+                        sustentável para todos.
+                      </p>
+                      <button>
+                        <a
+                          href="https://decorfabri.com.br/"
+                          style={{ textDecoration: "none" }}
+                        >
+                          Visite
+                        </a>
+                      </button>
+                    </div>
+                  </li>
+                  <li
+                    className="item"
+                    style={{
+                      backgroundImage: "url('/image/greicy.png')",
+                    }}
+                  >
+                    <div className="content-project">
+                      <h2 className="title-project">Psicóloga Greicy Pais</h2>
+                      <p className="description">
+                        Doutoranda em Psicologia, graduada em Psicologia e
+                        Enfermagem, com especialização em Neuropsicologia, MBA
+                        em Gestão de Pessoas e Coach, Terapias Cognitivas*,
+                        Acupuntura* e Urgência e Emergência.
+                      </p>
+                      <button>
+                        <a
+                          href="https://psicologagreicypais.com.br/"
+                          style={{ textDecoration: "none" }}
+                        >
+                          Visite
+                        </a>
+                      </button>
+                    </div>
+                  </li>
                   <li
                     className="item"
                     style={{
