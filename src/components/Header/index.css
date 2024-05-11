@@ -1,23 +1,23 @@
 .logo {
-    width: 50px;
+  width: 50px;
 }
 
 .logo-text {
-    font-family: "Abhaya Libre", serif !important;
-    font-weight: 400 !important;
-    font-style: normal !important;
+  font-family: "Abhaya Libre", serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
 }
 
 .div-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {
-    .div-logo {
-        position: absolute;
-        left: 50%;
-        right: 50%;
-    }
+  .div-logo {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+  }
 }

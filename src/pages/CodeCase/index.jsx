@@ -154,6 +154,11 @@ export const CodeCase = () => {
         .addEventListener("click", () => {
           gotoSection(3, 1);
         });
+      document
+        .getElementById("vamosconversarmobile")
+        .addEventListener("click", () => {
+          gotoSection(3, 1);
+        });
       document.getElementById("HomeButton").addEventListener("click", () => {
         gotoSection(0, 1);
       });
@@ -188,6 +193,7 @@ export const CodeCase = () => {
                   .timeline()
                   .to(".div-logo", {
                     right: "50%",
+                    left: "50%",
                     rotation: 0,
                     position: "absolute",
                     duration: 3, // Duração da animação
@@ -206,7 +212,9 @@ export const CodeCase = () => {
                   })
                   .to(".div-logo", {
                     position: "absolute", // Defina a posição absoluta para poder usar as propriedades de posicionamento
+                    left: "90%",
                     right: 0, // Posicione a logo no canto direito,
+                    scale: "0.75",
                     rotation: 360,
                     duration: 3, // Duração da animação
                     ease: "elastic", // Tipo de suavização da animação
