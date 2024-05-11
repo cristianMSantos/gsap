@@ -187,12 +187,14 @@ export const Contact = () => {
                       </Button>
                     </Box>
                   </Grid>
-                  <div className="scroll-contact">
-                    <div className="chevron"></div>
-                    <div className="chevron"></div>
-                    <div className="chevron"></div>
-                    <span className="scroll-text">ROLE PARA BAIXO</span>
-                  </div>
+                  {window.innerWidth >= 600 && (
+                    <div className="scroll-project">
+                      <div className="chevron"></div>
+                      <div className="chevron"></div>
+                      <div className="chevron"></div>
+                      <span className="scroll-text">ROLE PARA BAIXO</span>
+                    </div>
+                  )}
                 </Grid>
               </div>
             </div>

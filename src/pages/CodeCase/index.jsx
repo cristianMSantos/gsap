@@ -273,12 +273,14 @@ export const CodeCase = () => {
                       VAMOS CONVERSAR
                     </Button>
                   </div>
-                  <div className="scroll">
-                    <div className="chevron"></div>
-                    <div className="chevron"></div>
-                    <div className="chevron"></div>
-                    <span className="scroll-text">ROLE PARA BAIXO</span>
-                  </div>
+                  {window.innerWidth >= 600 && (
+                    <div className="scroll-project">
+                      <div className="chevron"></div>
+                      <div className="chevron"></div>
+                      <div className="chevron"></div>
+                      <span className="scroll-text">ROLE PARA BAIXO</span>
+                    </div>
+                  )}
                   <div className="home-bottom">
                     <h1 className="home-message">{displayText}</h1>
                     <Button
