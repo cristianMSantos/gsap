@@ -179,38 +179,41 @@ export const CodeCase = () => {
         onWheel: () => {
           const home = document.querySelectorAll("#home");
           const styleHome = getComputedStyle(home[0]);
+          console.log(window.innerWidth);
 
-          setTimeout(() => {
-            if (styleHome.visibility === "visible") {
-              gsap
-                .timeline()
-                .to(".div-logo", {
-                  right: "50%",
-                  rotation: 0,
-                  position: "absolute",
-                  duration: 3, // Duração da animação
-                  ease: "elastic", // Tipo de suavização da animação
-                })
-                .to(".logo-text", {
-                  opacity: 1,
-                  duration: 1,
-                });
-            } else {
-              gsap
-                .timeline()
-                .to(".logo-text", {
-                  opacity: 0,
-                  duration: 1,
-                })
-                .to(".div-logo", {
-                  position: "fixed", // Defina a posição absoluta para poder usar as propriedades de posicionamento
-                  right: 0, // Posicione a logo no canto direito,
-                  rotation: 360,
-                  duration: 3, // Duração da animação
-                  ease: "elastic", // Tipo de suavização da animação
-                });
-            }
-          }, 1300);
+          if (window.innerWidth < 600) {
+            setTimeout(() => {
+              if (styleHome.visibility === "visible") {
+                gsap
+                  .timeline()
+                  .to(".div-logo", {
+                    right: "50%",
+                    rotation: 0,
+                    position: "absolute",
+                    duration: 3, // Duração da animação
+                    ease: "elastic", // Tipo de suavização da animação
+                  })
+                  .to(".logo-text", {
+                    opacity: 1,
+                    duration: 1,
+                  });
+              } else {
+                gsap
+                  .timeline()
+                  .to(".logo-text", {
+                    opacity: 0,
+                    duration: 1,
+                  })
+                  .to(".div-logo", {
+                    position: "absolute", // Defina a posição absoluta para poder usar as propriedades de posicionamento
+                    right: 0, // Posicione a logo no canto direito,
+                    rotation: 360,
+                    duration: 3, // Duração da animação
+                    ease: "elastic", // Tipo de suavização da animação
+                  });
+              }
+            }, 1300);
+          }
         },
         tolerance: 10,
         preventDefault: true,
