@@ -45,7 +45,8 @@ export const Project = () => {
                       backgroundImage: "url('/image/greicy.png')",
                     }}
                   >
-                    <div className="content-project">
+                    {/* <div className="backdropGreicy"></div> */}
+                    <div className="content-project" style={{ zIndex: 2 }}>
                       <h2 className="title-project">Psicóloga Greicy Pais</h2>
                       <p className="description">
                         Doutoranda em Psicologia, graduada em Psicologia e
@@ -124,7 +125,8 @@ export const Project = () => {
                       backgroundImage: "url('/image/greicy.png')",
                     }}
                   >
-                    <div className="content-project">
+                    {/* <div className="backdropGreicy"></div> */}
+                    <div className="content-project" style={{ zIndex: 2 }}>
                       <h2 className="title-project">Psicóloga Greicy Pais</h2>
                       <p className="description">
                         Doutoranda em Psicologia, graduada em Psicologia e
