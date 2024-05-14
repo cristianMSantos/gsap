@@ -268,14 +268,14 @@ export const Project = () => {
                     <ArrowForwardIcon />
                   </IconButton>
                 </nav>
-                {window.innerWidth >= 600 && (
+                {/* {window.innerWidth >= 600 && (
                   <div className="scroll-project">
                     <div className="chevron"></div>
                     <div className="chevron"></div>
                     <div className="chevron"></div>
                     <span className="scroll-text">ROLE PARA BAIXO</span>
                   </div>
-                )}
+                )} */}
               </div>
             </div>
           </Grid>

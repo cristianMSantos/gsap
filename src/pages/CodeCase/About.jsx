@@ -158,14 +158,14 @@ export const About = () => {
                       </TabContext>
                     </Grid>
                   </Box>
-                  {window.innerWidth >= 600 && (
+                  {/* {window.innerWidth >= 600 && (
                     <div className="scroll-project">
                       <div className="chevron"></div>
                       <div className="chevron"></div>
                       <div className="chevron"></div>
                       <span className="scroll-text">ROLE PARA BAIXO</span>
                     </div>
-                  )}
+                  )} */}
                 </Grid>
               </div>
             </div>

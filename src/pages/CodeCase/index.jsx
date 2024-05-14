@@ -160,7 +160,11 @@ export const CodeCase = () => {
           gotoSection(3, 1);
         });
       document.getElementById("HomeButton").addEventListener("click", () => {
-        gotoSection(0, 1);
+        const home = document.querySelectorAll("#home");
+        const styleHome = getComputedStyle(home[0]);
+        if (styleHome.visibility !== "visible") {
+          gotoSection(0, 1);
+        }
       });
       document
         .getElementById("ProjetosButton")
@@ -182,6 +186,48 @@ export const CodeCase = () => {
         onDown: () => !animating && gotoSection(currentIndex - 1, -1),
         onUp: () => !animating && gotoSection(currentIndex + 1, 1),
         onWheel: () => {
+          const home = document.querySelectorAll("#home");
+          const styleHome = getComputedStyle(home[0]);
+          console.log(window.innerWidth);
+
+          if (window.innerWidth < 600) {
+            setTimeout(() => {
+              if (styleHome.visibility === "visible") {
+                gsap
+                  .timeline()
+                  .to(".div-logo", {
+                    right: "50%",
+                    left: "50%",
+                    rotation: 0,
+                    position: "absolute",
+                    duration: 3, // Duração da animação
+                    ease: "elastic", // Tipo de suavização da animação
+                  })
+                  .to(".logo-text", {
+                    opacity: 1,
+                    duration: 1,
+                  });
+              } else {
+                gsap
+                  .timeline()
+                  .to(".logo-text", {
+                    opacity: 0,
+                    duration: 1,
+                  })
+                  .to(".div-logo", {
+                    position: "absolute", // Defina a posição absoluta para poder usar as propriedades de posicionamento
+                    left: "90%",
+                    right: 0, // Posicione a logo no canto direito,
+                    scale: "0.75",
+                    rotation: 360,
+                    duration: 3, // Duração da animação
+                    ease: "elastic", // Tipo de suavização da animação
+                  });
+              }
+            }, 1300);
+          }
+        },
+        onDrag: () => {
           const home = document.querySelectorAll("#home");
           const styleHome = getComputedStyle(home[0]);
           console.log(window.innerWidth);
